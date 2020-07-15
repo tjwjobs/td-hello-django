@@ -26,7 +26,7 @@ def add_item(request):
 
 
 def edit_item(request, item_id):
-    item = get_item_or_404(Item, id=item_id)
+    item = get_object_or_404(Item, id=item_id)
     if request.method == 'POST':
         form = ItemForm(request.POST, instance=item)
         if form.is_valid():
